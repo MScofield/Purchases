@@ -16,24 +16,22 @@
             <br><br>
         <table>
             <tr>
-                <!--<th>Name</th>
-                <th>Email</th>-->
+                <th>Name</th>
+                <th>Email</th>
                 <th>Category</th>
                 <th>Card Number</th>
                 <th>CVV</th>
                 <th>Date</th>
             </tr>
-            {{#customer}}
+            {{#purchases}}
             <tr>
                 <td>{{customer.customerName}}</td>
                 <td>{{customer.customerEmail}}</td>
-            {{/customer}}
-            {{#purchases}}
                 <td>{{category}}</td>
                 <td>{{cardNumber}}</td>
                 <td>{{cvv}}</td>
                 <td>{{date}}</td>
-        </tr>
+            </tr>
             {{/purchases}}
 
         </table>

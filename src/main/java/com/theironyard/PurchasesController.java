@@ -77,11 +77,13 @@ public class PurchasesController {
         } else {
             pli = (List<Purchase>) ECSpurchasesDB.findAll();
         }
-        model.addAttribute("purchases", pli);
+
 //        model.addAttribute("nextPage", page +1);
 //        model.addAttribute("showNext", pli.hasNext());
 //        model.addAttribute("previousPage", page -1);
 //        model.addAttribute("showPrevious", pli.hasPrevious());
+//        model.addAttribute("customer", pli);
+        model.addAttribute("purchases", pli);
         model.addAttribute("category", category);
         return "home";
     }//end of slashroute
