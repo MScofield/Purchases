@@ -64,25 +64,14 @@ public class PurchasesController {
     }//end of init route
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
-    public String home(Model model, String category, Integer page) {
-        //display purchases
-        //include name and email then category, cc#, cvv and date in joined table view
-        //accepts category query parameter if category != null calls instead of findall
-        //display links allowing to filter by each category
-//        page = (page == null) ? 0 : page;
-//        PageRequest pager = new PageRequest(page, 10);
+    public String home(Model model, String category) {
+
         List<Purchase> pli;
         if(category != null) {
             pli = ECSpurchasesDB.findByCategory(category);
         } else {
             pli = (List<Purchase>) ECSpurchasesDB.findAll();
         }
-
-//        model.addAttribute("nextPage", page +1);
-//        model.addAttribute("showNext", pli.hasNext());
-//        model.addAttribute("previousPage", page -1);
-//        model.addAttribute("showPrevious", pli.hasPrevious());
-//        model.addAttribute("customer", pli);
         model.addAttribute("purchases", pli);
         model.addAttribute("category", category);
         return "home";
