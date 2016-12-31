@@ -8,32 +8,34 @@
         <form action="/" method="get"></form>
             <a href="/">All</a>
             <a href="/?category=Furniture">Furniture</a>
-            <a href="/?type=Alcohol">Alchohol</a>
-            <a href="/?type=toiletries">Toiletries</a>
-            <a href="/?type=Shoes">Shoes</a>
-            <a href="/?type=Food">Food</a>
-            <a href="/?type=Jewelry">Jewelry</a>
+            <a href="/?category=Alcohol">Alchohol</a>
+            <a href="/?category=Toiletries">Toiletries</a>
+            <a href="/?category=Shoes">Shoes</a>
+            <a href="/?category=Food">Food</a>
+            <a href="/?category=Jewelry">Jewelry</a>
             <br><br>
         <table>
             <tr>
-                <td>Name</td>
-                <td>Email</td>
-                <td>Category</td>
-                <td>Card Number</td>
-                <td>CVV</td>
-                <td>Date</td>
-            </tr><tr>
-            {{#Customer}}
-                <td>{{customerName}}</td>
-                <td>{{customerEmail}}</td>
-            {{/Customer}}
+                <!--<th>Name</th>
+                <th>Email</th>-->
+                <th>Category</th>
+                <th>Card Number</th>
+                <th>CVV</th>
+                <th>Date</th>
+            </tr>
+            {{#customer}}
+            <tr>
+                <td>{{customer.customerName}}</td>
+                <td>{{customer.customerEmail}}</td>
+            {{/customer}}
             {{#purchases}}
                 <td>{{category}}</td>
                 <td>{{cardNumber}}</td>
                 <td>{{cvv}}</td>
                 <td>{{date}}</td>
+        </tr>
             {{/purchases}}
-            </tr>
+
         </table>
     </body>
 </html>
