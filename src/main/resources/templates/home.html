@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+    <body>
+        <form action="/" method="get"></form>
+            <a href="/">All</a>
+            <a href="/?category=Furniture">Furniture</a>
+            <a href="/?type=Alcohol">Alchohol</a>
+            <a href="/?type=toiletries">Toiletries</a>
+            <a href="/?type=Shoes">Shoes</a>
+            <a href="/?type=Food">Food</a>
+            <a href="/?type=Jewelry">Jewelry</a>
+            <br><br>
+        <table>
+            <tr>
+                <td>Name</td>
+                <td>Email</td>
+                <td>Category</td>
+                <td>Card Number</td>
+                <td>CVV</td>
+                <td>Date</td>
+            </tr><tr>
+            {{#Customer}}
+                <td>{{customerName}}</td>
+                <td>{{customerEmail}}</td>
+            {{/Customer}}
+            {{#purchases}}
+                <td>{{category}}</td>
+                <td>{{cardNumber}}</td>
+                <td>{{cvv}}</td>
+                <td>{{date}}</td>
+            {{/purchases}}
+            </tr>
+        </table>
+    </body>
+</html>
